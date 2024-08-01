@@ -7,7 +7,11 @@ FROM base as prod
 ENV TZ=Europe/Lisbon
 
 
-USER langflow
+# USER langflow
+RUN USER_UID=1000 \
+    && USER_GID=1000 \
+    && groupadd --gid ${USER_GID} langflow \
+    && useradd --uid ${USER_UID} -g langflow langflow
 
 
 WORKDIR /app
