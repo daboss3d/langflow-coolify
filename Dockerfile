@@ -16,7 +16,9 @@ WORKDIR /app
 RUN echo -e '#!/usr/bin/bash\npython "$@"' > /usr/bin/py && \
     chmod +x /usr/bin/py
 
-
+# set storage, in coolify add resource/New Persistent Storage
+# and Volume Mount name: langflow-vol and destination: /app/storage
+ENV STORAGE = '/app/storage'
 
 # update pip 
 RUN python -m pip install --upgrade pip
