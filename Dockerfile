@@ -33,4 +33,5 @@ RUN python -m pip install langflow -U
 
 
 # command to run on container start
-CMD ["python", "-m", "langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
+# CMD ["python", "-m", "langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "-m", "langflow", "run", "--port", "7860"]
